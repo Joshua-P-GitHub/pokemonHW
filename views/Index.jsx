@@ -1,23 +1,58 @@
 const React = require('react')
 
-
+function makeProperTitle(title) {
+  let arr = []
+  let arr2 = []
+  let finalString = ''
+  let finalString2 = ''
+  if (title.split(' ').length > 1) {
+    let wordArr = title.split(' ')
+    for (let word of wordArr) {
+      arr = []
+      finalString = ''
+      for (let character of word) {
+        arr.push(character)
+      }
+      for (let i = 0; i < arr.length; i++) {
+        if (i === 0) {
+          arr[i] = arr[i].toUpperCase()
+        }
+        finalString += arr[i]
+      }
+      arr2.push(finalString)
+    }
+    for (let i = 0; i < arr2.length; i++) {
+      finalString2 += `${arr2[i]} `
+    }
+    finalString2.trimEnd()
+    return finalString2
+  } else {
+    for (let character of title) {
+      arr.push(character)
+    }
+    for (let i = 0; i < arr.length; i++) {
+      if (i === 0) {
+        arr[i] = arr[i].toUpperCase()
+      }
+      finalString += arr[i]
+    }
+    return finalString
+  }
+}
 
 
 class Index extends React.Component {
   render() {
     return (
-      <html lang="en">
+      <html>
       <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
       </head>
       <body>
         <h1>See all the pokemon</h1>
         <ul>
           {this.props.pokemon.map((p) => {
-              return (<li>{p.name}</li>)
+              return (<li>{makeProperTitle(p.name)}</li>)
           })}
         </ul>
       </body>
