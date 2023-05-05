@@ -40,7 +40,7 @@ function makeProperTitle(title) {
   }
 }
 
-
+let i = -1
 class Index extends React.Component {
   render() {
     return (
@@ -52,7 +52,8 @@ class Index extends React.Component {
         <h1>See all the pokemon</h1>
         <ul>
           {this.props.pokemon.map((p) => {
-              return (<li><a href='#'>{makeProperTitle(p.name)}</a></li>)
+              i++
+              return (<li><a href={`/pokemon/${i}`}>{makeProperTitle(p.name)}</a></li>)
           })}
         </ul>
       </body>
