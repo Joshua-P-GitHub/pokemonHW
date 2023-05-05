@@ -52,7 +52,7 @@ class Show extends React.Component {
       <body>
         <h1>Gotta Catch 'Em All</h1>
         <h2>{this.props.thePokemon.name}</h2>
-        <img src={`${this.props.thePokemon.img}.jpg`}/>
+        <img src={`http://img.pokemondb.net/artwork/${this.props.thePokemon.name}.jpg`}/>
         <a href='/pokemon'>BACK</a>
       </body>
       </html>

@@ -1,4 +1,7 @@
-const pokemon = [
+const { Schema, model } = require('mongoose')
+
+
+const pokemond = [
   {name: "bulbasaur", img: "http://img.pokemondb.net/artwork/bulbasaur"},
   {name: "ivysaur", img: "http://img.pokemondb.net/artwork/ivysaur"},
   {name: "venusaur", img: "http://img.pokemondb.net/artwork/venusaur"},
@@ -8,5 +11,11 @@ const pokemon = [
   {name: "wartortle", img: "http://img.pokemondb.net/artwork/wartortle"}
  ];
 
+const pokemonSchema = new Schema({
+  name: {type: String}
+})
 
- module.exports = pokemon
+
+const Pokemon = model('pokemon', pokemonSchema)
+
+module.exports = Pokemon

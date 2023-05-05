@@ -1,5 +1,4 @@
 const React = require('react')
-const pokemon = require('../models/pokemon')
 
 function makeProperTitle(title) {
   let arr = []
@@ -54,7 +53,7 @@ class Index extends React.Component {
         <ul>
           {this.props.pokemon.map((p) => {
               i++
-              return (<li><a href={`/pokemon/${i}`}>{makeProperTitle(p.name)}</a></li>)
+              return (<li><a href={`/pokemon/${p._id}`}>{makeProperTitle(p.name)}</a></li>)
           })}
         </ul>
         <a href="/pokemon/new">Create A Pokemon</a>
