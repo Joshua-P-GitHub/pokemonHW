@@ -49,14 +49,14 @@ class Index extends React.Component {
         <title>Document</title>
       </head>
       <body>
-        <h1>See all the pokemon</h1>
+        <h1 style={{backgroundColor: 'red', textAlign: 'center'}}>See all the pokemon</h1>
         <ul>
           {this.props.pokemon.map((p) => {
               i++
-              return (<li><a href={`/pokemon/${p._id}`}>{makeProperTitle(p.name)}</a></li>)
+              return (<li style={{listStyle: 'none', marginBottom: 15, backgroundColor: 'red', padding: 15, textAlign: 'center'}}><a style={{color: 'white'}} href={`/pokemon/${p._id}`}>{makeProperTitle(p.name)}</a></li>)
           })}
         </ul>
-        <a href="/pokemon/new">Create A Pokemon</a>
+        <a href="/pokemon/new" style={{backgroundColor: 'green', padding: 20, width: '100%', textAlign: 'center'}}>Create A Pokemon</a>
       </body>
       </html>
     )
