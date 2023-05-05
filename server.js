@@ -27,7 +27,7 @@ app.get('/pokemon', async (req, res) => {
 
 //Show
 app.get('/pokemon/:id', async (req,res) => {
-  res.send(req.params.id)
+  res.render('Show', {thePokemon: pokemon[req.params.id]})
 })
 
 

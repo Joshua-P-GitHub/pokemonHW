@@ -1,4 +1,5 @@
 const React = require('react')
+const pokemon = require('../models/pokemon')
 
 function makeProperTitle(title) {
   let arr = []
@@ -40,9 +41,9 @@ function makeProperTitle(title) {
   }
 }
 
-let i = -1
 class Index extends React.Component {
   render() {
+      let i = -1
     return (
       <html>
       <head>
