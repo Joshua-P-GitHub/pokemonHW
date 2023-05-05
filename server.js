@@ -10,6 +10,7 @@ app.engine('jsx', reactViewsEngine);
 app.set('view engine', 'jsx');
 // This line sets the render method's default location to look for a jsx file to render. Without this line of code we would have to specific the views directory everytime we use the render method
 app.set('views', './views');
+app.use(express.urlencoded({ extended: false }));
 
 
 //Induces
@@ -24,7 +25,18 @@ app.get('/pokemon', async (req, res) => {
   res.render('Index', {pokemon: pokemon})
 })
 
+//New
 
+app.get('/pokemon/new', async (req, res) => {
+  res.render('New')
+})
+
+//Create
+app.post('/pokemon', async (req, res) => {
+  pokemon.push(req.body)
+  console.log(req.body)
+  res.redirect('/pokemon')
+})
 //Show
 app.get('/pokemon/:id', async (req,res) => {
   res.render('Show', {thePokemon: pokemon[req.params.id]})

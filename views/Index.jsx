@@ -57,6 +57,7 @@ class Index extends React.Component {
               return (<li><a href={`/pokemon/${i}`}>{makeProperTitle(p.name)}</a></li>)
           })}
         </ul>
+        <a href="/pokemon/new">Create A Pokemon</a>
       </body>
       </html>
     )
