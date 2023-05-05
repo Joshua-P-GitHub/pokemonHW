@@ -52,7 +52,7 @@ class Index extends React.Component {
         <h1>See all the pokemon</h1>
         <ul>
           {this.props.pokemon.map((p) => {
-              return (<li>{makeProperTitle(p.name)}</li>)
+              return (<li><a href='#'>{makeProperTitle(p.name)}</a></li>)
           })}
         </ul>
       </body>

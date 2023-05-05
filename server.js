@@ -25,6 +25,12 @@ app.get('/pokemon', async (req, res) => {
 })
 
 
+//Show
+app.get('/pokemon/:id', async (req,res) => {
+  res.send(req.params.id)
+})
+
+
 
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
